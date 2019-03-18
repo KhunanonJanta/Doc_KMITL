@@ -1,5 +1,4 @@
 @startuml
-TicketingSystem <|-- OnlineTicket
 
 TicketingSystem <|-- Counter
 Person o-- Member
