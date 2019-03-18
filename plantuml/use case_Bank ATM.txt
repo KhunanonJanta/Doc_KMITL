@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor Customer
+actor :ATM Technician:
+actor Bank
+
+rectangle "Bank ATM" <<subsystem>>{
+Customer -- (Check Balances)
+Customer -- (Deposit Funds)
+Customer -- (Withraw Cash)
+Customer -- (Tranfer Funds)
+
+:ATM Technician: -- (Maintenance)
+:ATM Technician: -- (Repair)
+
+(Check Balances) -- Bank
+(Deposit Funds) - Bank
+(Withraw Cash) -- Bank
+(Tranfer Funds) -- Bank
+(Maintenance) -- Bank
+(Repair) -- Bank
+}
+@enduml

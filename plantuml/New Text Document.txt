@@ -1,0 +1,18 @@
+@startuml
+TicketingSystem <|-- OnlineTicket
+
+TicketingSystem <|-- Counter
+Person o-- Member
+Person o-- Staff
+TicketingSystem - Member : < use 
+Counter - Staff : < control
+
+
+TicketingSystem : Choose a movie
+TicketingSystem : Choose a movie theater
+TicketingSystem : Select showtimes
+TicketingSystem : Choose a seat
+TicketingSystem : Payment
+
+
+@enduml

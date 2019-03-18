@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+actor Receptionist
+rectangle "Hospital Reception"<<module>>{
+Receptionist -- (Sehedule Patient\nAppointment)
+Receptionist -- (Sehedule Patient\nHospital Admission)
+Receptionist -- (Patient Registration)
+Receptionist -- (Patient Hospital\nAdmission)
+Receptionist -- (File Insurance\nForms/Claims)
+Receptionist -- (File medical Reports)
+
+(Sehedule Patient\nAppointment) <. (Patient Registration):<<extend>>
+(Sehedule Patient\nHospital Admission) <. (Patient Registration):<<extend>>
+
+(Patient Hospital\nAdmission) .> (Patient Registration):<<include>>
+(Patient Hospital\nAdmission) <|-- (Outpatient Hospital\nAdmission)
+(Patient Hospital\nAdmission) <|-- (Inpatient Hospital\nAdmission)
+(Inpatient Hospital\nAdmission) ..> (Bed Allotment):<<include>>
+}
+@enduml

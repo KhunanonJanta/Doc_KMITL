@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+actor :Minor Passenger:
+actor :Passenger\nWith Speacial Needs:
+actor :Tour Guide:
+actor :Passenger:
+:Tour Guide: -right-|> :Passenger:
+:Minor Passenger: --|> :Passenger:
+:Passenger\nWith Speacial Needs: --|> :Passenger:
+
+rectangle "Airport"<<Business>> {
+:Tour Guide: -- (Group\nCheck-in)
+:Passenger: -- (Individual\nCheck-in)
+:Passenger: -- (Secuiity\nScreening)
+
+(Individual\nCheck-in) <. (Group\nCheck-in):<<include>>
+(Individual\nCheck-in) <.down. (Baggage\nCheck-in):<<extend>>
+(Individual\nCheck-in) <|-- (Counter\nCheck-in)
+(Individual\nCheck-in) <|-- (Kiosk\nCheck-in)
+
+(Counter\nCheck-in) <.. (Baggage\nHandling):<<extend>>
+(Kiosk\nCheck-in) <.. (Baggage\nHandling):<<extend>>
+}
+@enduml

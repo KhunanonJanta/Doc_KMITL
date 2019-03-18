@@ -1,0 +1,27 @@
+@startuml
+left to right direction
+actor :Product Manager:
+actor Development
+actor :Entitle Manager:
+actor :Customer Services:
+actor Customer
+rectangle "Sentinel EMS" <<Application>>{
+:Product Manager: -- (Define Feature)
+:Product Manager: -- (Define Product)
+(Define Product) <|-- (Define Trial Product)
+(Define Product) <|-- (Define Full Product)
+
+Development -- (Generate Trial\nProduct Bundle)
+Development -- (Generate\nRuntime\nInstaller)
+Development -- (Generate\nBranded RUS)
+
+:Entitle Manager: -- (Manage &\nProduce\nEntitlement)
+(Manage &\nProduce\nEntitlement) <.. (Generate\nProduct Key):<<extend>>
+:Entitle Manager: -- (Manage\nCustomer)
+
+:Customer Services: -- (Manage\nCustomer)
+:Customer Services: -- (Product\nActivation)
+
+Customer -- (Product\nActivation)
+}
+@enduml

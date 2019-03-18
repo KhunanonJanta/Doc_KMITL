@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor Waiter
+actor Client
+actor Cashier
+actor Chef
+
+rectangle "System Boundary"{
+(Order\nFood) 	<.. (Order\nWine):<<extend>>
+(Serve\nFood) 	<.. (Serve\nWine):<<extend>>
+(Eat\nFood) 	<.. (Drink\nWine):<<extend>>
+(Pay for\nFood) <.. (Pay for\nWine):<<extend>>
+Waiter -- (Order\nFood):receive order
+Waiter -- (Serve\nFood)
+Waiter -- (Pay for\nFood):facilitate payment
+
+Client -- (Order\nFood):place order
+Client -- (Eat\nFood)
+Client -- (Pay for\nFood):pay
+
+Cashier -- (Pay for\nFood):accept\npayment
+
+(Order\nFood) -up- Chef:confirm order
+(Cook\nFood) -- Chef
+}
+@enduml
