@@ -1,0 +1,68 @@
+﻿@startuml
+' commment
+Class o-- "Instruction media"
+"Instruction media" <|-- "School book" 
+Teacher -right- "Instruction media":use >
+Student -right- "School book":use >
+Teacher -- Student:teach >
+
+Book <|-- "School book"
+Book o-- "book cover"
+Book o-- preface
+Book o-- index
+Book o-- content
+Book o-- bibliography
+
+skinparam classAttributeIconSize 0
+Class Class{
+-subject code
+-Course content
+}
+Class "Instruction media"{
+}
+Class "School book"{
+
+}
+Class Teacher{
+-Name
+-faculty
++teach()
+}
+Class Student{
+-Name
+-student ID
+-faculty
++study()
+}
+Class Book{
+-Name
++Colors
+-price
+#ISBN
+-author
++Open()
++Close()
++Read()
+}
+Class "book cover"{
+-Name
++Flip pages()
+}
+Class preface{
+-text
++Read()
+}
+Class index{
+-text
++Read()
+}
+Class content{
+-text
++Read()
+}
+Class bibliography{
+-text
++Read()
+}
+
+@enduml

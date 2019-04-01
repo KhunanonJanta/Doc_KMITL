@@ -1,0 +1,31 @@
+﻿@startuml
+class Employee
+
+class Employee{
+-Emp_Code 		
+-Emp_Name 
+-Emp_Age
+-Emp_Weight
+-Emp_Height 
+-Emp_Nationality 
+-Emp_DateofBirth 
+-Emp_Identify_No 
+-Emp_Address 
+-Emp_Tel 
+-Emp_Position 
+-Emp_Start_Date 
+-Emp_Resign_Date 
+-Emp_Create_By 
+-Emp_Update_By 
+-Emp_Reject_By 
+}
+
+
+
+
+
+
+
+
+
+@enduml

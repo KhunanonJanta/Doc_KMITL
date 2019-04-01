@@ -1,0 +1,15 @@
+@startuml
+actor user
+
+user -> ATM : insert card
+user -> keypad : press(pin code)
+keypad -> ATM : [invalid pin code] warning
+ATM -> Monitor : [invalid pin code] ShowwarningMessage()
+Monitor -> ATM : [invalid pin code] stopOperation()
+Monitor -> ATM : [pin code] continueOperation()
+ATM -> Monitor : showMainMenu()
+user -> keypad : checkBalance()
+keypad -> ATM : checkBalance()
+ATM -> Account : checkBalance()
+Account -> Monitor : showBlance()
+@enduml
